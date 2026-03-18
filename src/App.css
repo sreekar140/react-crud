@@ -11,10 +11,11 @@ body{
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
     text-align: center;
+     border-top: 5px solid #5a3e72;
 }
 
 .container h1{
-    color:#555;
+    color:black;
     margin-bottom:20px;
 }
 
@@ -131,3 +132,33 @@ input[type="text"]:focus {
     gap: 10px;
 }
 
+.errorMsg{
+    color: #e74c3c;
+    font-size: 12px;
+    margin-top: 4px;
+    display: block;
+}
+
+.details {
+    width: fit-content;     /* shrink to content */
+    margin: 0 auto;         /* center horizontally */
+    text-align: left;       /* keep text left aligned */
+}
+
+.details p {
+    display: flex;
+    align-items: center;
+    margin: 12px 0;
+    font-size: 18px;
+}
+
+.details strong {
+    width: 90px;        /* controls alignment */
+    font-weight: 700;   /* bold but clean */
+    color: #1f2937;     /* slightly darker */
+}
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}

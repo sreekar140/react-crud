@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 const StudentTable = () => {
     const [students,setStudents]=useState("")
+    const navigate = useNavigate()
     useEffect(()=>{
             fetch("http://localhost:3001/students")
             .then((res) => res.json())
@@ -11,6 +12,9 @@ const StudentTable = () => {
     })
             .catch((err)=>console.log(err.message))
         },[]);
+    const displayitems=((id)=> {
+        navigate("/student/view/"+id);
+    });
     return ( 
         <div className="container">
             <h1>student records</h1>
@@ -28,15 +32,15 @@ const StudentTable = () => {
                     </thead>
                     <tbody>
                         {students && students.map((student)=>(
-                        <tr>
+                        <tr key={student.id}>
                             <td>{student.id}</td>
                             <td>{student.name}</td>
                             <td>{student.place}</td>
                             <td>{student.phone}</td>
                             <td>
-                                <Link to="/student/view/:studentid" className="btn btn-info">View</Link>
-                                <Link to="/student/edit/:studentid" className="btn btn-primary">Edit</Link>
-                                <Link to="" className="btn btn-danger">Delete</Link>
+                                <Link to={`/student/view/${student.id}`} className="btn btn-info">View</Link>
+                                <Link to={`/student/edit/${student.id}`} className="btn btn-primary">Edit</Link>
+                                <Link className="btn btn-danger">Delete</Link>
                             </td>
                         </tr>
                         ))}

@@ -6,6 +6,7 @@ const CreateStudent = () => {
     const[name,setName]=useState("");
     const[place,setPlace]=useState("");
     const[phone,setPhone]=useState("");
+    const[validate,setValidate]=useState(false)
     const navigate = useNavigate();
     const handleSubmit = (e)=>{
         e.preventDefault();
@@ -29,22 +30,26 @@ const CreateStudent = () => {
           <form onSubmit={handleSubmit}>
     <div>
         <label>ID:</label>
-        <input type="text" onChange={(e)=>setID(e.target.value)}/>
+        <input type="text" required value={id} onChange={(e)=>setID(e.target.value)} onMouseDown={()=>setValidate(true)}/>
+        {id.length===0 && validate && <span className="errorMsg">Please Enter Your ID :</span>}
     </div>
 
     <div>
         <label>Name:</label>
-        <input type="text" onChange={(e)=>setName(e.target.value)}/>
+        <input type="text" required value={name} onChange={(e)=>setName(e.target.value)} onMouseDown={()=>setValidate(true)}/>
+        {name.length===0 && validate && <span className="errorMsg">Please Enter Your Name :</span>}
     </div>
 
     <div>
         <label>Place:</label>
-        <input type="text" onChange={(e)=>setPlace(e.target.value)}/>
+        <input type="text" required value={place} onChange={(e)=>setPlace(e.target.value)} onMouseDown={()=>setValidate(true)}/>
+        {place.length===0 && validate && <span className="errorMsg">Please Enter Your Place :</span>}
     </div>
 
     <div>
         <label>Phone:</label>
-        <input type="text" onChange={(e)=>setPhone(e.target.value)}/>
+        <input type="text" required value={phone} onChange={(e)=>setPhone(e.target.value)} onMouseDown={()=>setValidate(true)}/>
+        {phone.length===0 && validate && <span className="errorMsg">Please Enter Your Phone :</span>}
     </div>
 
     <div className="button-group">
