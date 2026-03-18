@@ -1,0 +1,23 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "Khanam",
+      "place": "Bengaluru",
+      "phone": "765756564"
+    },
+    {
+      "id": "2",
+      "name": "Rahul",
+      "place": "Hyderabad",
+      "phone": "987654321"
+    },
+    {
+      "id": "3",
+      "name": "Sreekar",
+      "place": "kurnool",
+      "phone": "8897600492"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
