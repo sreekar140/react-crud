@@ -14,7 +14,7 @@ const StudentTable = () => {
         },[]);
     const displayitems=((id)=> {
         navigate("/student/view/"+id);
-    });
+    })
     return ( 
         <div className="container">
             <h1>student records</h1>

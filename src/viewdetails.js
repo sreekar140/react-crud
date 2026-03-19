@@ -23,8 +23,9 @@ const StudentDetails = () => {
         </div>
         <div className="btn-container">
                 <Link to="/" className="btn btn-danger">Back</Link>
-            </div>
-            </>
+        </div>
+        </>
+        
        ) }
        </div>
      );
