@@ -1,12 +1,6 @@
 {
   "students": [
     {
-      "id": "1",
-      "name": "Khanam",
-      "place": "Mysore",
-      "phone": "765756564"
-    },
-    {
       "id": "2",
       "name": "Rahul",
       "place": "Hyderabad",

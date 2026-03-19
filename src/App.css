@@ -80,7 +80,6 @@ table tbody tr:hover{
     cursor: pointer;
 }
 
-/* Container for the white card */
 .container_1 {
     max-width: 600px;
     margin: 50px auto;
@@ -161,4 +160,35 @@ input[type="text"]:focus {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+}
+
+.btn.btn-danger{
+
+    transition: all 0.3s ease;
+}
+
+.btn.btn-danger:hover{
+    transform: translateY(-3px);
+    color: white;
+    font-weight: 600;
+}
+.btn.btn-info{
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn.btn-info:hover{
+    transform: translateY(-3px);
+    color: white;
+    font-weight: 600;
+}
+
+.btn.btn-primary{
+    transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover{
+    transform: translateY(-3px);
+    color: white;
+    font-weight: 600;
 }

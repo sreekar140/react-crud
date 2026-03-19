@@ -1,3 +1,4 @@
+import { Button } from "bootstrap"
 import { useEffect, useState } from "react"
 import {Link, useNavigate} from "react-router-dom"
 const StudentTable = () => {
@@ -15,6 +16,19 @@ const StudentTable = () => {
     const displayitems=((id)=> {
         navigate("/student/view/"+id);
     })
+    
+    const removeDetails = (id)=>{
+        if(window.confirm("Are you sure")){
+            fetch("http://localhost:3001/students/" + id,{
+            method : 'DELETE',
+        })
+        .then(res => {
+            alert("student data Deleted succesfully");
+            window.location.reload();
+        })
+        .catch(err => console.log(err))
+        }
+    }
     return ( 
         <div className="container">
             <h1>student records</h1>
@@ -40,7 +54,7 @@ const StudentTable = () => {
                             <td>
                                 <Link to={`/student/view/${student.id}`} className="btn btn-info">View</Link>
                                 <Link to={`/student/edit/${student.id}`} className="btn btn-primary">Edit</Link>
-                                <Link className="btn btn-danger">Delete</Link>
+                                <button className="btn btn-danger" onClick={()=> removeDetails(student.id)}>Delete</button>
                             </td>
                         </tr>
                         ))}
